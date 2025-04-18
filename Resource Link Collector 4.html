@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///Users/shahnawaz/Downloads/Resource%20Link%20Collector.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Resource Link Collector</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; background: #f8f8f8; }
+    h1 { color: #333; }
+    .resource-list { margin-top: 20px; }
+    .resource-item { margin-bottom: 10px; }
+    label { font-weight: bold; }
+    input, button { padding: 6px; margin: 4px 0; }
+    input[type="url"] { width: 300px; }
+  </style>
+</head>
+<body>
+  <h1>Resource Link Collector</h1>
+  <form id="linkForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" required="" placeholder="e.g., Interesting Article"><br>
+    <label for="url">URL:</label>
+    <input type="url" id="url" required="" placeholder="https://..."><br>
+    <button type="submit">Add Link</button>
+  </form>
+  <div class="resource-list" id="resourceList">
+    <h2>Saved Resources</h2>
+    <ul id="links"><li class="resource-item"><a href="https://www.youtube.com/watch?v=uKBKpoPUSh4&amp;list=PLynLXReWAxdEWhnqHpHwjoI-AIzBGFAah&amp;index=2" target="_blank" rel="noopener">Aptitude</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=IWJvIomLZeM&amp;list=PLv9P5G8zaeaM6BVubos2HdWGwYGpxUg5t&amp;index=1" target="_blank" rel="noopener">English</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=uCS7UJ-VFIU&amp;list=PL4t_secZTPn4OsMFDJiK2owWhv_kxPLFu" target="_blank" rel="noopener">Compound Interest</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=mze94w5KW2w&amp;list=PL4t_secZTPn4PaEWl9SeW53VfMD4JUU2-" target="_blank" rel="noopener">Reasoning</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=f5NC1EHylT0&amp;list=PLTEXaVySC18WDPzzXQMWKjoB_HlK2APs9&amp;index=2" target="_blank" rel="noopener">Logical Reasoning</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=FDt5azHFzxg&amp;list=PLT2PUxNJBoeP5a7kesF6LrMLQMhyN6wZ6" target="_blank" rel="noopener">English topic wise</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=maVt_A-y9vg&amp;list=PLT2PUxNJBoePxreYvdXEPoNcGDavgrlJd" target="_blank" rel="noopener">Maths</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=-1OZ1yiYVKg&amp;list=PLT2PUxNJBoeP7pvzBN-dEV5gg8whJmp4W" target="_blank" rel="noopener">Reasoning2</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=Nyq4HTQBHHE&amp;list=PLdOORLf1GKKONLl8kDS6S9_t-dfzrBkaf" target="_blank" rel="noopener">Gagan sir math pyq</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=7rYowjfp6nI&amp;list=PLdOORLf1GKKPeTvy3yJkKzMJaJPooDxth" target="_blank" rel="noopener">Gagan sir math 2</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=8ywE0PMgwOM&amp;list=PLQYgCxDYkIsx0vmogQCmXf57orVpwKNPL" target="_blank" rel="noopener">SSC Maths 1</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=y-aOLNW-sxE&amp;list=PLQYgCxDYkIswP64osjQ2GB5l1zJpfEZ2p&amp;index=2" target="_blank" rel="noopener">SSC Maths 2</a></li><li class="resource-item"><a href="https://www.youtube.com/watch?v=n0LOpxYT0t8" target="_blank" rel="noopener">Reasoning 3</a></li></ul>
+  </div>
+  <script>
+    const form = document.getElementById('linkForm');
+    const links = document.getElementById('links');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const title = document.getElementById('title').value.trim();
+      const url = document.getElementById('url').value.trim();
+
+      if(title && url) {
+        const li = document.createElement('li');
+        li.className = 'resource-item';
+        li.innerHTML = `<a href="${url}" target="_blank" rel="noopener">${title}</a>`;
+        links.appendChild(li);
+        form.reset();
+      }
+    });
+  </script>
+
+
+</body></html>
